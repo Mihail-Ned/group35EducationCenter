@@ -1,0 +1,127 @@
+Разработать приложение которое позволит реализовать следующий функционал:
+- пользователь имеет возможность купить курс из перечня курсов
+- каждый курс состоит из нескольких уроков
+- пользователь должен быть зарегистрирован
+- незарегистрированный пользователь может посмотреть список всех доступных курсов
+
+Entity:
+User
+- id
+- firstName
+- lastName
+- email
+- password
+- role
+- courses
+
+
+Lesson:
+- id
+- name
+- startTime
+- finishTime
+- dayOfWeek
+
+Course
+- id
+- title
+- description
+- beginDate
+- endDate
+- price
+- state
+- students
+- lessons
+
+
+
+API requests:
+
+
+
+Режим администратора
+
+
+добавление курса -
+
+courses localhost:8080/api/admin/courses
+method: POST
+Content-Type: application/json
+
+{
+"title" : "Курс Java beginner",
+"beginDate": "2024-05-15",
+"endDate": "2024-10-15",
+"description":"Курс по Java",
+"price": 300.0
+}
+
+
+- удалить курс (со всеми уроками)
+
+DELETE /api/admin/course/1
+
+- посмотреть всех студентов
+
+GET /api/admin/users
+
+- посмотреть всех студентов на курсе
+
+GET /api/admin/courses/1/users
+
+
+- добавить урок в курс
+POST /api/courses/1/lessons
+
+
+- изменить урок
+
+PUT /api/courses/1/lessons/2
+
+- удалить урок
+
+DELETE /api/courses/1/lessons/2
+
+---------------------------------------
+
+
+Общий доступ:
+
+
+- получение курсов
+
+Get localhost:8080/api/courses
+
+- получение одного курса
+
+Get localhost:8080/api/courses/2
+
+
+- регистрация пользователя
+
+POST localhost:8080/api/users/register
+
+- firstName
+- lastName
+- email
+- password
+
+
+
+--------------------------------------
+
+
+Режим пользователя:
+
+- добавить студента на курс
+- POST localhost:8080/api/users/course
+- userId
+
+
+- получить список всех уроков из курса
+GET /api/courses/1/lessons
+
+- получить конкретный урок из курса
+GET /api/courses/1/lessons/2
+
+
