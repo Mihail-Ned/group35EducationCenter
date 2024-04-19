@@ -1,0 +1,49 @@
+
+a group35EducationCenter ~/ldeaProjects/AlT/group35Education
+> C.idea
+> C.mvn
+v src
+
+v [ main
+
+v L java
+v G org
+group35educationcenter
+[ config
+
+controllers
+
+dto
+
+exceptions
+
+)RestException
+C RestExceptionHandler
+models
+
+repositories
+
+security
+services
+
+validation
+Group35EducationCenterApplication
+TaskDescription
+v [ resources
+
+static
+
+L templates
+& application.properties
+C test
+O.gitignore
+M+ HELP.md
+
+mvnw
+
+mvnw.cmd
+m pom.xml
+> th External Libraries
+> Eº Scratches and Consoles
+
+
